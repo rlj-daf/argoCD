@@ -10,7 +10,7 @@ spec:
     namespace: argocd
   project: default
   source:
-    path: apps/
+    path: infrastructure/
     repoURL: https://github.com/RasmusLynge/argoCD.git
     targetRevision: HEAD
   syncPolicy:
