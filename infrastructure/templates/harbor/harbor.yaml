@@ -4,17 +4,17 @@ metadata:
   name: harbor
 spec:
   destination:
-    server: https://kubernetes.default.svc
+    name: 'harbor'
     namespace: harbor
-  project: default
+    server: 'https://kubernetes.default.svc'
   source:
+    path: ''
+    repoURL: 'https://helm.goharbor.io'
+    targetRevision: 1.11.1
     chart: harbor
     helm:
-      values: |
-        pushgateway:
-          enabled: false
-    repoURL: https://helm.goharbor.io
-    targetRevision: 1.11.1
+      valueFiles:
+        - values.yaml
   syncPolicy:
     automated:
       prune: true
