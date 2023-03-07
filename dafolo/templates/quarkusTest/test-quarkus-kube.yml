@@ -1,0 +1,57 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    app.quarkus.io/build-timestamp: 2023-03-01 - 10:08:03 +0000
+  labels:
+    app.kubernetes.io/name: quarkus-pipeline-test
+    app.kubernetes.io/version: 1.0.0
+  name: quarkus-pipeline-test
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: quarkus-pipeline-test
+      app.kubernetes.io/version: 1.0.0
+  template:
+    metadata:
+      annotations:
+        app.quarkus.io/build-timestamp: 2023-03-01 - 10:08:03 +0000
+      labels:
+        app.kubernetes.io/name: quarkus-pipeline-test
+        app.kubernetes.io/version: 1.0.0
+    spec:
+      containers:
+        - env:
+            - name: KUBERNETES_NAMESPACE
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.namespace
+          image: 94.130.230.30:30002/test/quarkus-pipeline-test:0.0.2
+          imagePullPolicy: Always
+          name: quarkus-pipeline-test
+          ports:
+            - containerPort: 8080
+              name: http
+              protocol: TCP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    app.quarkus.io/build-timestamp: 2023-03-01 - 10:08:03 +0000
+  labels:
+    app.kubernetes.io/name: quarkus-pipeline-test
+    app.kubernetes.io/version: 1.0.0
+  name: quarkus-pipeline-test
+spec:
+  ports:
+    - name: http
+      port: 80
+      protocol: TCP
+      targetPort: 8080
+  selector:
+    app.kubernetes.io/name: quarkus-pipeline-test
+    app.kubernetes.io/version: 1.0.0
+  type: ClusterIP
