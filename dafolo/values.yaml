@@ -1,1 +1,0 @@
-# helm template apps/ | kubectl apply -n argocd -f -
