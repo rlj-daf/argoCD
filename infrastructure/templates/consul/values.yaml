@@ -1,0 +1,33 @@
+global:
+  name: consul
+  image: "hashicorp/consul:1.14.3"
+  # The main enabled/disabled setting. If true, servers,
+  # clients, Consul DNS and the Consul UI will be enabled. Each component can override
+  # this default via its component-specific "enabled" config. If false, no components
+  # will be installed by default and per-component opt-in is required, such as by
+  # setting `server.enabled` to true.
+  enabled: true
+
+syncCatalog:
+  enabled: true
+
+server:
+    # If true, the chart will install all the resources necessary for a
+    # Consul server cluster. If you're running Consul externally and want agents
+    # within Kubernetes to join that cluster, this should probably be false.
+    # @default: global.enabled
+    # @type: boolean
+    enabled: true
+
+    # The number of server agents to run. This determines the fault tolerance of
+    # the cluster. Please see the deployment table (https://consul.io/docs/internals/consensus#deployment-table)
+    # for more information.
+    replicas: 3
+
+    # Configures the automatic Connect sidecar injector.
+connectInject:
+      # True if you want to enable connect injection. Set to "-" to inherit from
+      # global.enabled.
+    enabled: false
+ui:
+  enabled: true
