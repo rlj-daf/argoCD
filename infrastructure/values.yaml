@@ -1,1 +1,1 @@
-# helm template dafolo/ | kubectl apply -n dafolo -f -
+# helm template infrastructure/ | kubectl apply -n dafolo -f -
