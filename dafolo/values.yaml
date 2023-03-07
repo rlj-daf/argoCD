@@ -1,1 +1,1 @@
-# helm template apps/ | kubectl apply -n argocd -f -
+# helm template dafolo/ | kubectl apply -n dafolo -f -
