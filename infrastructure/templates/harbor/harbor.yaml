@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: harbor
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: harbor
+  project: default
+  source:
+    chart: harbor
+    helm:
+      values: |
+        pushgateway:
+          enabled: false
+    repoURL: https://helm.goharbor.io
+    targetRevision: 1.11.1
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
