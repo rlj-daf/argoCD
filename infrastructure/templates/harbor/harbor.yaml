@@ -4,11 +4,11 @@ metadata:
   name: harbor
 spec:
   destination:
-    server: 'https://kubernetes.default.svc'
+    server: https://kubernetes.default.svc
     namespace: harbor
   project: default
   source:
-    repoURL: 'https://helm.goharbor.io'
+    repoURL: https://helm.goharbor.io
     chart: harbor
     targetRevision: 1.11.0
     helm:

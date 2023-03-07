@@ -4,12 +4,12 @@ metadata:
   name: consul
 spec:
   destination:
-    server: 'https://kubernetes.default.svc'
+    server: https://kubernetes.default.svc
     namespace: consul
   project: default
   source:
-    repoURL: 'https://helm.releases.hashicorp.com'
     chart: consul
+    repoURL: https://helm.releases.hashicorp.com
     targetRevision: 1.14.4
     helm:
       valueFiles: []
