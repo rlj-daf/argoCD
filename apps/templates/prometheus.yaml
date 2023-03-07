@@ -4,16 +4,17 @@ metadata:
   name: prometheus
 spec:
   destination:
-    name: ''
+    server: https://kubernetes.default.svc
     namespace: prometheus
-    server: 'https://kubernetes.default.svc'
-  source:
-    path: ''
-    repoURL: 'https://prometheus-community.github.io/helm-charts'
-    targetRevision: ''
-    chart: prometheus
-  sources: []
   project: default
+  source:
+    chart: prometheus
+    helm:
+      values: |
+        pushgateway:
+          enabled: false
+    repoURL: https://prometheus-community.github.io/helm-charts
+    targetRevision: 15.6.0
   syncPolicy:
     automated:
       prune: true
