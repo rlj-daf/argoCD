@@ -4,7 +4,6 @@ metadata:
   name: consul
 spec:
   destination:
-    name: 'consul'
     namespace: consul
     server: 'https://kubernetes.default.svc'
   source:
