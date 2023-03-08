@@ -9,7 +9,7 @@ metadata:
     app.kubernetes.io/version: 1.0.0
   name: argo-test
 spec:
-  replicas: 10
+  replicas: 1
   selector:
     matchLabels:
       app.kubernetes.io/name: argo-test
