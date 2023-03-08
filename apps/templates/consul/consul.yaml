@@ -4,15 +4,24 @@ metadata:
   name: consul
 spec:
   destination:
-    name: ''
+    name: 'consul'
     namespace: consul
     server: 'https://kubernetes.default.svc'
   source:
-    path: ''
     repoURL: 'https://helm.releases.hashicorp.com'
     targetRevision: 1.1.0
     chart: consul
+    helm:
+      parameters:
+        - name: syncCatalog.enabled
+          value: 'true'
+        - name: server.enabled
+          value: 'true'
+        - name: ui.enabled
+          value: 'true'
   sources: []
   project: default
   syncPolicy:
-    automated: null
+    automated:
+      prune: true
+      selfHeal: true
