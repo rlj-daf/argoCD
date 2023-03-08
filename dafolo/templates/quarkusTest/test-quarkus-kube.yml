@@ -5,21 +5,21 @@ metadata:
   annotations:
     app.quarkus.io/build-timestamp: 2023-03-01 - 10:08:03 +0000
   labels:
-    app.kubernetes.io/name: quarkus-pipeline-test
+    app.kubernetes.io/name: argo-test
     app.kubernetes.io/version: 1.0.0
-  name: quarkus-pipeline-test
+  name: argo-test
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app.kubernetes.io/name: quarkus-pipeline-test
+      app.kubernetes.io/name: argo-test
       app.kubernetes.io/version: 1.0.0
   template:
     metadata:
       annotations:
         app.quarkus.io/build-timestamp: 2023-03-01 - 10:08:03 +0000
       labels:
-        app.kubernetes.io/name: quarkus-pipeline-test
+        app.kubernetes.io/name: argo-test
         app.kubernetes.io/version: 1.0.0
     spec:
       containers:
@@ -30,7 +30,7 @@ spec:
                   fieldPath: metadata.namespace
           image: 94.130.230.30:30002/test/quarkus-pipeline-test:0.0.2
           imagePullPolicy: Always
-          name: quarkus-pipeline-test
+          name: argo-test
           ports:
             - containerPort: 8080
               name: http
@@ -42,9 +42,9 @@ metadata:
   annotations:
     app.quarkus.io/build-timestamp: 2023-03-01 - 10:08:03 +0000
   labels:
-    app.kubernetes.io/name: quarkus-pipeline-test
+    app.kubernetes.io/name: argo-test
     app.kubernetes.io/version: 1.0.0
-  name: quarkus-pipeline-test
+  name: argo-test
 spec:
   ports:
     - name: http
@@ -52,6 +52,6 @@ spec:
       protocol: TCP
       targetPort: 8080
   selector:
-    app.kubernetes.io/name: quarkus-pipeline-test
+    app.kubernetes.io/name: argo-test
     app.kubernetes.io/version: 1.0.0
   type: ClusterIP
