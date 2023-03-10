@@ -18,6 +18,12 @@ spec:
           value: 'true'
         - name: server.enabled
           value: 'true'
+        - name: server.replicas
+          value: '3'
+        - name: ui.enabled
+          value: 'true'
+        - name: connectInject.enabled
+          value: 'false'
         - name: ui.enabled
           value: 'true'
   sources: []
