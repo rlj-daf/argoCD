@@ -18,6 +18,18 @@ spec:
           value: ''
         - name: sidecar.datasources.enabled
           value: 'true'
+        - name: 'sidecar.datasources.maxLines'
+          value: '1000'
+        - name: 'loki.enabled'
+          value: 'true'
+        - name: 'loki.isDefault'
+          value: 'true'
+        - name: 'grafana.enabled'
+          value: 'true'
+        - name: 'prometheus.enabled'
+          value: 'true'
+        - name: 'prometheus.isDefault'
+          value: 'false'
   sources: []
   project: default
   syncPolicy:
