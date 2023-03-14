@@ -5,6 +5,8 @@ namespace sat til "argocd"
 
 
 ## For at køre projektet på kubernetes-cluster:  
+**Hent projekt ned og cd ind i mappen...**   
+
 **Opret charts og hent dependencies**  
 `helm repo add argo-cd https://argoproj.github.io/argo-helm`  
 `helm dep update charts/argo-cd/`  
