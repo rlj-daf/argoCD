@@ -22,7 +22,7 @@ spec:
           value: 'http://127.0.0.1:30002'
   sources: []
   project: default
-  syncPolicy:
-    automated:
-      prune: false
-      selfHeal: false
+  syncPolicy: null
+ #   automated:
+ #     prune: false
+ #     selfHeal: false
