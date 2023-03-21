@@ -11,7 +11,7 @@ metadata:
 #    nginx.ingress.kubernetes.io/app-root: /quarkus
 spec:
   rules:
-    - host: digitor.dk
+    - host: argo.digitor.dk
       http:
         paths:
         - path: /
