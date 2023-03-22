@@ -4,12 +4,13 @@ metadata:
   name: argo-ingress
   namespace: argocd
   annotations:
-    kubernetes.io/ingress.class: nginx
-    nginx.ingress.kubernetes.io/rewrite-target: /
-    nginx.ingress.kubernetes.io/ssl-redirect: "false"
-    nginx.ingress.kubernetes.io/use-regex: "true"
-#    nginx.ingress.kubernetes.io/app-root: /quarkus
+    kubernetes.io/ingress.class: "nginx"    
+    cert-manager.io/issuer: "letsencrypt-prod"
 spec:
+tls:
+  - hosts:
+    - digitor.dk
+    secretName: quickstart-example-tls
   rules:
     - host: argo.digitor.dk
       http:
