@@ -9,7 +9,7 @@ metadata:
 spec:
   tls:
   - hosts:
-    - digitor.dk
+    - argo.digitor.dk
     secretName: quickstart-example-tls
   rules:
     - host: argo.digitor.dk
