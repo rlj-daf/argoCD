@@ -4,22 +4,22 @@ metadata:
   annotations:
     app.quarkus.io/build-timestamp: 2023-03-20 - 12:44:33 +0000
   labels:
-    app.kubernetes.io/version: 0.0.5
-    app.kubernetes.io/name: quarkus-pipeline-test
-  name: quarkus-pipeline-test
+    app.kubernetes.io/version: 1.0.0
+    app.kubernetes.io/name: github-package-test
+  name: github-package-test
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app.kubernetes.io/version: 0.0.5
-      app.kubernetes.io/name: quarkus-pipeline-test
+      app.kubernetes.io/version: 1.0.0
+      app.kubernetes.io/name: github-package-test
   template:
     metadata:
       annotations:
         app.quarkus.io/build-timestamp: 2023-03-20 - 12:44:33 +0000
       labels:
-        app.kubernetes.io/version: 0.0.5
-        app.kubernetes.io/name: quarkus-pipeline-test
+        app.kubernetes.io/version: 1.0.0
+        app.kubernetes.io/name: github-package-test
     spec:
       containers:
       - env:
@@ -27,9 +27,9 @@ spec:
           valueFrom:
             fieldRef:
               fieldPath: metadata.namespace
-        image: rasmuslynge/quarkus-pipeline-test:0.0.5
+        image: ghcr.io/dafolo-digital/test-rasmus:1.0.0
         imagePullPolicy: Always
-        name: quarkus-pipeline-test
+        name: test-rasmus
         ports:
         - containerPort: 8080
           name: http
@@ -40,15 +40,15 @@ metadata:
   annotations:
     app.quarkus.io/build-timestamp: 2023-03-20 - 12:44:33 +0000
   labels:
-    app.kubernetes.io/name: quarkus-pipeline-test
-    app.kubernetes.io/version: 0.0.5
-  name: quarkus-pipeline-test
+    app.kubernetes.io/name: github-package-test
+    app.kubernetes.io/version: 1.0.0
+  name: github-package-test
 spec:
   ports:
   - name: http
     port: 80
     targetPort: 8080
   selector:
-    app.kubernetes.io/name: quarkus-pipeline-test
-    app.kubernetes.io/version: 0.0.5
+    app.kubernetes.io/name: github-package-test
+    app.kubernetes.io/version: 1.0.0
   type: ClusterIP
